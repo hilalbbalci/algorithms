@@ -1,4 +1,4 @@
-
+#choose the first n primer and palindromic numbers 
 def lazyevaluation(n) 
     2.upto(Float::INFINITY).lazy.select { |x| prime?(x) && palindromic?(x) }.first(n) 
 end 
