@@ -9,19 +9,14 @@
 end
 
 def reverse_list(head)
-    return if head.nil?
-    return head if head.next.nil?
-    node = head
-    until (head.next.nil?)
-       head = head.next  
+    prev_node = nil
+    while head != nil
+        nextNode = head.next
+        head.next = prev_node
+        prev_node = head
+        head = nextNode
     end
-    p head.val
-    p remove(node).val
-    p reverse_list(remove(node)).val
-    head.next = reverse_list(remove(node)) 
-    p head.val
-    p head.next
-    return head 
+    return prev_node
 end
 def remove(head) 
     return head if head.nil?
@@ -45,4 +40,5 @@ ln2 = ListNode.new(2, nil)
 
 ln = ListNode.new(1, ln2)
 puts reverse_list(ln).val
+
 # puts reverse_list(ln).next.val
