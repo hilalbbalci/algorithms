@@ -9,7 +9,7 @@ def best_sum(target, arr, memo = {})
         if sub_result != nil
             combination  = sub_result << num
             if shortest == nil || combination.length < shortest.length
-                shortest = sub_result
+                shortest = combination
             end
         end   
     end
@@ -17,6 +17,6 @@ def best_sum(target, arr, memo = {})
     return shortest
 end
 
-# p best_sum(7,[5,3,4,7])
-# p best_sum(8,[2,5,3])
-p best_sum(100,[25,5,2,1])
+p best_sum(7,[5,3,4,7])
+p best_sum(8,[2,5,3])
+# p best_sum(100,[25,5,2,1])
