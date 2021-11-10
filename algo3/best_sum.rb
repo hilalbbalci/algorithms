@@ -6,9 +6,9 @@ def best_sum(target, arr, memo = {})
     arr.each do |num|
         remainder = target - num
         sub_result = best_sum(remainder, arr, memo)
-        if sub_result
-            sub_result << num
-            if shortest == nil || sub_result.length < shortest.length
+        if sub_result != nil
+            combination  = sub_result << num
+            if shortest == nil || combination.length < shortest.length
                 shortest = sub_result
             end
         end   
