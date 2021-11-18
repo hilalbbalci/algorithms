@@ -1,23 +1,26 @@
 def is_valid_sudoku(board)
     
-    row = Array.new(9, [])
-    col = Array.new(9, [])
-    grid = Array.new(9, [])
+    row = []
+    col = []
+    grid = []
 
     i = 0
     while i < board.length
+        row << []
         j = 0
         while j < board.length
-            
+            col << []
             cell = board[i][j]
-           
-            
             if cell != '.'
+                grid << []
                 if row[i].include?(cell)
+                    p row[i]
                     return false 
                 else     
                     row[i] << cell
                 end 
+                
+
                 if col[j].include?(cell)
                     return false 
                 else 
@@ -39,3 +42,5 @@ def is_valid_sudoku(board)
     return true 
             
 end
+board = [["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]
+p is_valid_sudoku(board)
