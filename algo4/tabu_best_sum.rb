@@ -8,13 +8,13 @@ def tabu_best_sum(target, arr)
     while i <= target
         if !table[i].nil?
             arr.each do |num|
-                if table[i+num].nil?
-                    table[i+num] = table[i] + [num]
-                else
-                    if table[i+num].length > (table[i].length) + 1
+                # if table[i+num].nil?
+                #     table[i+num] = table[i] + [num]
+                # else
+                    if table[i+num].nil? || table[i+num].length > (table[i].length) + 1
                         table[i+num] = table[i] + [num]
                     end
-                end
+                # end
                 # if i+num == target
                 #     return table[target]
                 # end
