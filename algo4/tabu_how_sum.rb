@@ -1,4 +1,4 @@
-def howSum(target, nums)
+def tabu_howSum(target, nums)
     arr = Array.new(target+1).map{|x| x = nil}
 
     arr[0] = []
@@ -16,4 +16,4 @@ def howSum(target, nums)
     return arr[target]
 end
 
-p howSum(300, [7, 14])
+p tabu_howSum(300, [7, 14])
